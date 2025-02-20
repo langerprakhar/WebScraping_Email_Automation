@@ -1,0 +1,464 @@
+Name,Description,Email,Research Area
+Hal Abelson,"Class of 1922 Professor, [CS and AI+D]",hal@mit.edu,"AI and Society
+Artificial Intelligence + Machine Learning
+Educational Technology"
+Elfar Adalsteinsson,"Eaton-Peabody Professor, [EE and AI+D]",elfar@mit.edu,"AI for Healthcare and Life Sciences
+Biological and Medical Devices and Systems
+Graphics and Vision"
+Fadel Adib,"Associate Professor, Media Lab; Joint appointment in EECS, [CS]",fadel@mit.edu,Systems and Networking
+Anant Agarwal,"CEO, edX; Professor of EECS; [CS and EE]",agarwal@mit.edu,"Computer Architecture
+Programming Languages and Software Engineering
+Systems and Networking"
+Pulkit Agrawal,Associate Professor [AI+D and CS],pulkitag@mit.edu,"Artificial Intelligence + Machine Learning
+Graphics and Vision
+Robotics"
+Akintunde Akinwande,"Thomas and Gerd Perkins Professor of Electrical Engineering and Computer Science; Professor of EE, [EE]",akinwand@mtl.mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Nanoscale Materials, Devices, and Systems"
+Mohammad Alizadeh,"Associate Professor, [CS and AI+D]; Industry Officer; Director, 6-A MEng Thesis Program",alizadeh@mit.edu,"Security and Cryptography
+Systems and Networking
+Theory of Computation"
+Saman Amarasinghe,"Professor of EECS, [CS]",samana@mit.edu,"Artificial Intelligence + Machine Learning
+Computer Architecture
+Programming Languages and Software Engineering"
+Jacob Andreas,"Associate Professor of EECS, [AI+D]",jda@mit.edu,"617-253-0352
+Artificial Intelligence + Machine Learning
+Natural Language and Speech Processing"
+Dimitri Antoniadis,"Ray and Maria Stata Professor of Electrical Engineering and Computer Science (Professor Emeritus), [EE]",antoniadis@mtl.mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Nanoscale Materials, Devices, and Systems"
+Ahmad Bahai,"Professor of the Practice, [EE]",abahai@mit.edu,"617-324-2730
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Information Science and Systems
+Integrated Circuits and Systems"
+Hari Balakrishnan,"Fujitsu Professor in Electrical Engineering and Computer Science, [CS and AI+D]",hari@csail.mit.edu,"Security and Cryptography
+Systems and Networking"
+Marc A Baldo,"Director, RLE;  Dugald C. Jackson Professor in EE, [EE]",baldo@mit.edu,"617 452-5132
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Energy"
+Regina Barzilay,"School of Engineering Distinguished Professor of AI and Health, [AI+D]",regina@csail.mit.edu,"AI for Healthcare and Life Sciences
+Artificial Intelligence + Machine Learning
+Natural Language and Speech Processing"
+Stephen Bates,X-Window Consortium Professor; Assistant Professor,s_bates@mit.edu,"Artificial Intelligence + Machine Learning
+Information Science and Systems
+Optimization and Game Theory"
+Sara Beery,Homer A. Burnell Career Development Professor; Assistant Professor [AI+D],beery@mit.edu,"AI and Society
+Artificial Intelligence + Machine Learning
+Graphics and Vision"
+Adam Belay,"Associate Professor, [CS]",abelay@csail.mit.edu,"Computer Architecture
+Systems and Networking"
+Karl Berggren,"Joseph F. and Nancy P. Keithley Professor in Electrical Engineering, [EE]",berggren@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Energy
+Nanoscale Materials, Devices, and Systems"
+Dimitri Bertsekas,Jerry Mcafee (1940) Professor in Engineering (Post-Tenure),dimitrib@mit.edu,"Optimization and Game Theory
+Systems and Networking
+Systems Theory, Control, and Autonomy"
+Robert Berwick,"Professor of CS and Engineering and Computational Linguistics (Post-Tenure), [AI+D and CS]",berwick@csail.mit.edu,"AI for Healthcare and Life Sciences
+Artificial Intelligence + Machine Learning
+Natural Language and Speech Processing"
+Sangeeta Bhatia,"John and Dorothy Wilson Professor of EECS, [EE and AI+D]",sbhatia@mit.edu,"Biological and Medical Devices and Systems
+Computational Fabrication and Manufacturing
+Nanoscale Materials, Devices, and Systems"
+Abigail Bodner,"Assistant Professor [EE] Shared position: Earth, Atmospheric and Planetary Sciences (EAPS) and EECS",abodner@mit.edu,
+Duane Boning,"MIT vice provost for international activities (VPIA), effective Sept. 1; Associate Director, MTL; Clarence J. LeBel Professor in Electrical Engineering and Computer Science; Engineering Faculty Co-Director, LGO , [EE and AI+D]",boning@mtl.mit.edu,"Computational Fabrication and Manufacturing
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Nanoscale Materials, Devices, and Systems"
+Guy Bresler,"Associate Professor of EECS and in IDSS, [AI+D]",guy@mit.edu,"Artificial Intelligence + Machine Learning
+Systems and Networking
+Theory of Computation"
+Tamara Broderick,"Associate Professor of EECS, [AI+D]",tamarab@mit.edu,"617-324-6749
+Artificial Intelligence + Machine Learning"
+Vladimir Bulović,"Director, MIT.nano; Fariborz Maseeh (1990) Professor of Emerging Technology, [EE]",bulovic@mit.edu,"Energy
+Nanoscale Materials, Devices, and Systems
+Optics + Photonics"
+Michael Carbin,"Associate Professor, [CS and AI+D]",mcarbin@csail.mit.edu,"Energy
+Programming Languages and Software Engineering
+Security and Cryptography"
+Vincent Chan,"Joan and Irwin M. (1957) Jacobs Professor, Professor Post-Tenure, [AI+D and EE]",chan@mit.edu,"Communications Systems
+Computer Architecture
+Electronic, Magnetic, Optical and Quantum Materials and Devices"
+Anantha Chandrakasan,"Dean, MIT School of Engineering; Chief Innovation and Strategy Officer, MIT; Vannevar Bush Professor, [EE and CS]",dean_soe@mit.edu,"Artificial Intelligence + Machine Learning
+Communications Systems
+Electronic, Magnetic, Optical and Quantum Materials and Devices"
+Suraj Cheema,"AMAX Career Development Professor, Assistant Professor of Materials Science and Engineering; joint appointment in EECS [EE]",sscheema@mit.edu,617-452-3499
+YuFeng (Kevin)  Chen,"Associate Professor, [EE and AI+D]",yufengc@mit.edu,"Robotics
+Systems Theory, Control, and Autonomy"
+Adam Chlipala,"Arthur J. Conner (1888) Professor, [CS]",adamc@csail.mit.edu,"Programming Languages and Software Engineering
+Security and Cryptography
+Systems and Networking"
+Isaac Chuang,"Professor of EECS, [AI+D and EE, CS]",ichuang@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Information Science and Systems
+Nanoscale Materials, Devices, and Systems"
+Sam Coday,Emanuel E. Landsman (1958) Career Development Professor; Assistant Professor [EE],coday@mit.edu,"617-253-3934
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Energy"
+Connor Wilson Coley,"Associate Professor / Shared appointment in ChemE, [AI+D]",ccoley@mit.edu,"Artificial Intelligence + Machine Learning
+Biological and Medical Devices and Systems"
+Henry Corrigan-Gibbs,"Douglas Ross (1954) Career Development Professor of Software Technology; Assistant Professor, [CS]",henrycg@csail.mit.edu,"617-253-0301
+Security and Cryptography
+Systems and Networking"
+Munther Dahleh,"William A. Coolidge Professor, [AI+D and EE]",dahleh@mit.edu,"AI and Society
+Systems and Networking
+Systems Theory, Control, and Autonomy"
+Luca Daniel,"Professor of EECS, [EE and AI+D]",luca@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Nanoscale Materials, Devices, and Systems
+Systems Theory, Control, and Autonomy"
+Constantinos Daskalakis,"Armen Avanessians (1982) Professor, [AI+D and CS]",costis@csail.mit.edu,"AI and Society
+AI for Healthcare and Life Sciences
+Optimization and Game Theory"
+Randall Davis,"Professor, [AI+D]",davis@csail.mit.edu,"Artificial Intelligence + Machine Learning
+Human-Computer Interaction"
+Jesús del Alamo,"Donner Professor of Science, [EE]",alamo@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Nanoscale Materials, Devices, and Systems"
+Christina Delimitrou,"KDD Career Development Professor in Communications and Technology; Associate Professor, [CS]",delimitrou@csail.mit.edu,"Computer Architecture
+Theory of Computation"
+Erik Demaine,"Professor, [CS]",edemaine@mit.edu,Theory of Computation
+Srini Devadas,"Edwin Sibley Webster Professor, [CS]",devadas@mit.edu,"Computer Architecture
+Integrated Circuits and Systems
+Security and Cryptography"
+David DeWitt,Adjunct Professor of EECS,david.dewitt@outlook.com,"608-239-9646
+Optimization and Game Theory
+Theory of Computation"
+Priya Donti,"Silverman (1968) Family Career Development Professor; Assistant Professor, [EE, AI+D]",donti@mit.edu,"617-452-2351
+AI and Society
+Artificial Intelligence + Machine Learning
+Energy"
+Frederic Durand,"Amar Bose Professor of Computing, [AI+D and CS]",fredo@mit.edu,"Educational Technology
+Graphics and Vision"
+Joel Emer,"Professor of the Practice in EECS, [CS and EE]",emer@csail.mit.edu,"Computer Architecture
+Integrated Circuits and Systems
+Systems and Networking"
+Dirk Englund,"Professor, [EE and AI+D]",englund@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Nanoscale Materials, Devices, and Systems
+Optics + Photonics"
+Gabriele Farina,"X-Window Consortium Professor; Assistant Professor, [AI+D]",gfarina@mit.edu,"Artificial Intelligence + Machine Learning
+Optimization and Game Theory"
+Dennis Freeman,"Education Officer for EECS, Henry Ellis Warren (1894) Professor, [EE and AI+D]",freeman@mit.edu,Biological and Medical Devices and Systems
+William Freeman,"Thomas and Gerd Perkins Professor of EECS (Post-Tenure), [AI+D]",billf@csail.mit.edu,"Artificial Intelligence + Machine Learning
+Graphics and Vision"
+James Fujimoto,"Elihu Thomson Professor in Electrical Engineering, [EE]",jgfuji@mit.edu,"Biological and Medical Devices and Systems
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Optics + Photonics"
+Mohsen Ghaffari,"Steven and Renee Finn Career Development Professor; Associate Professor, [CS]",ghaffari@mit.edu,Theory of Computation
+Marzyeh Ghassemi,"The Germeshausen Career Development Professor; Associate Professor, [AI+D]",mghassem@mit.edu,"AI for Healthcare and Life Sciences
+Artificial Intelligence + Machine Learning"
+Manya Ghobadi,"Associate Professor, [CS]",ghobadi@mit.edu,"617-253-5851
+Artificial Intelligence + Machine Learning
+Communications Systems
+Systems and Networking"
+David Gifford,"Professor of CS and Engineering (Post-Tenure), [AI+D and CS]",dkg@mit.edu,"AI for Healthcare and Life Sciences
+Artificial Intelligence + Machine Learning"
+Shafrira Goldwasser,RSA Professor,shafi@csail.mit.edu,"(Post-Tenure)
+, [CS]
+Security and Cryptography
+Theory of Computation"
+Polina Golland,"Sunlin (1966) and Priscilla Chou Professor, [AI+D]",polina@csail.mit.edu,"AI for Healthcare and Life Sciences
+Artificial Intelligence + Machine Learning
+Biological and Medical Devices and Systems"
+Martha Gray,"Whitaker Professor in Biomedical Engineering, Professor of EECS, [EE]",mgray@mit.edu,"Biological and Medical Devices and Systems
+Electronic, Magnetic, Optical and Quantum Materials and Devices"
+W. Eric L Grimson,"Chancellor for Academic Advancement; Interim Vice President for Open Learning; Bernard M. Gordon Professor in Medical Engineering; Professor of Computer Science and Engineering, [CS and AI+D]",egrimson@mit.edu,"617-253-4645
+Artificial Intelligence + Machine Learning
+Biological and Medical Devices and Systems
+Graphics and Vision"
+John Guttag,"Dugald C. Jackson Professor in Electrical Engineering, [CS]",guttag@mit.edu,"AI for Healthcare and Life Sciences
+Biological and Medical Devices and Systems
+Graphics and Vision"
+Dylan Hadfield-Menell,"Bonnie and Marty (1964) Tenenbaum Career Development Professorship; Assistant Professor, [AI&D]",dylanhm@mit.edu,"Artificial Intelligence + Machine Learning
+Robotics"
+Peter Hagelstein,"Associate Professor of EE, [EE]",plh@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices"
+Jongyoon Han,"Professor of EE; Professor of Biological Engineering, Dual Appointment [EE]",jyhan@mit.edu,"Biological and Medical Devices and Systems
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Energy"
+Ruonan Han,"EECS Undergraduate Laboratory Officer; Associate Professor, [EE]",ruonan@mit.edu,"Biological and Medical Devices and Systems
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Integrated Circuits and Systems"
+Song Han,"Associate Professor, [EE and CS]",songhan@mit.edu,"Artificial Intelligence + Machine Learning
+Computer Architecture
+Integrated Circuits and Systems"
+Kaiming He,"Douglas Ross (1954) Career Development Professor of Software Technology; Associate Professor, [AI+D]",kaiming@mit.edu,"Artificial Intelligence + Machine Learning
+Graphics and Vision"
+Thomas Heldt,"Associate Professor of EECS and in IMES, [EE and AI+D]",thomas@mit.edu,"617-324-5005
+AI for Healthcare and Life Sciences
+Biological and Medical Devices and Systems
+Signal Processing"
+Sam Hopkins,"Jamieson Career Development Professor in Electrical Engineering and Computer Science; Assistant Professor, [CS and AI+D]",samhop@mit.edu,Theory of Computation
+Berthold Horn,"Professor of CS and Engineering (Post-Tenure), [CS and AI+D]",bkph@mit.edu,"Artificial Intelligence + Machine Learning
+Graphics and Vision"
+Qing Hu,"Distinguished Professor in Electrical Engineering and Computer Science, [EE]",qhu@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Nanoscale Materials, Devices, and Systems"
+Cheng Zhi (Anna) Huang,"Robert N. Noyce Career Development Professor, Assistant Professor (shared position, Music and Theater Arts and EECS) [AI+D]",huangcza@mit.edu,
+Daniel Huttenlocher,"Dean, MIT Stephen A. Schwarzman College of Computing; Henry Ellis Warren (1894) Professor, [CS and AI+D]",huttenlocher@mit.edu,"AI and Society
+Artificial Intelligence + Machine Learning
+Graphics and Vision"
+Marija Ilic,"Adjunct Professor, [EE]; Senior Research Scientist, LIDS",ilic@mit.edu,617-324-0645
+Piotr Indyk,"Thomas D. and Virginia W. Cabot Professor, [CS and AI+D]",indyk@csail.mit.edu,Theory of Computation
+Phillip Isola,"Class of 1948 Career Development Professor; Associate Professor, [AI+D]",phillipi@mit.edu,"Artificial Intelligence + Machine Learning
+Graphics and Vision
+Robotics"
+Tommi Jaakkola,"Thomas M. Siebel Distinguished Professor, [AI+D]",tommi@csail.mit.edu,"AI for Healthcare and Life Sciences
+Artificial Intelligence + Machine Learning
+Natural Language and Speech Processing"
+Daniel Jackson,"Professor of CS and Engineering, [CS]",dnj@csail.mit.edu,"Human-Computer Interaction
+Programming Languages and Software Engineering
+Systems and Networking"
+Patrick Jaillet,"Co-Director, MIT Operations Research Center; Dugald C. Jackson Professor in Electrical Engineering, [AI+D]",jaillet@mit.edu,"Artificial Intelligence + Machine Learning
+Optimization and Game Theory
+Systems Theory, Control, and Autonomy"
+Stefanie Jegelka,"Associate Professor, [AI+D]",stefje@MIT.EDU,"Artificial Intelligence + Machine Learning
+Optimization and Game Theory"
+Ericmoore Jossou,"John Clark Hardwick Professor; Assistant Professor, [EE] (shared position, Nuclear Science and Engineering and EECS)",ejossou@mit.edu,"617-253-3810
+Artificial Intelligence + Machine Learning"
+M. Frans Kaashoek,"Charles A. Piper (1935) Professor, [CS]",kaashoek@csail.mit.edu,"Computer Architecture
+Security and Cryptography
+Systems and Networking"
+Leslie Kaelbling,"Panasonic Professor, [AI+D]",lpk@csail.mit.edu,"Artificial Intelligence + Machine Learning
+Robotics"
+Yael Kalai,Ellen Swallow Richards (1873) Professor; Professor of EECS,tauman@mit.edu,"617-253-5851
+Security and Cryptography
+Theory of Computation"
+David Karger,"Professor, [CS]",karger@csail.mit.edu,"Educational Technology
+Human-Computer Interaction
+Theory of Computation"
+Dina Katabi,"Thuan (1990) and Nicole Pham Professor, [CS and AI+D]",dina@csail.mit.edu,"AI for Healthcare and Life Sciences
+Graphics and Vision
+Systems and Networking"
+Manolis Kellis,"Professor of CS, [AI+D and CS]",manoli@mit.edu,"AI for Healthcare and Life Sciences
+Artificial Intelligence + Machine Learning
+Biological and Medical Devices and Systems"
+Yoon Kim,NBX Professor; Assistant Professor [AI+D],yoonhkim@mit.edu,"_
+Artificial Intelligence + Machine Learning
+Natural Language and Speech Processing"
+"James Kirtley, Jr.","Professor of EE (Post-Tenure), [EE]",kirtley@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Energy
+Robotics"
+Leslie Kolodziejski,"EECS Graduate Officer; Joseph F. and Nancy P. Keithley Professor in EE, [EE]",leskolo@mit.edu,"617-253-7327
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Energy
+Nanoscale Materials, Devices, and Systems"
+Mina Konakovic Lukovic,"Homer A. Burnell Career Development Professor; Assistant Professor, [AI+D]",minakl@mit.edu,"Artificial Intelligence + Machine Learning
+Computational Fabrication and Manufacturing
+Graphics and Vision"
+Jing Kong,"Education Officer for Electrical Engineering, Jerry Mcafee (1940) Professor In Engineering, [EE and AI+D]",jingkong@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Energy
+Nanoscale Materials, Devices, and Systems"
+Tim Kraska,"Associate Professor, [CS and AI+D]",kraska@mit.edu,"(510) 926-5856
+Artificial Intelligence + Machine Learning
+Systems and Networking"
+Butler Lampson,Adjunct Professor of CS and Engineering,blampson@microsoft.com,"(425) 703-5925
+Computer Architecture
+Systems and Networking"
+Jeffrey Lang,"Vitesse Professor, [EE]",lang@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Energy
+Integrated Circuits and Systems"
+Hae-Seung Lee,"Advanced Television and Signal Processing (ATSP) Professor, [EE]",hslee@mtl.mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Integrated Circuits and Systems
+Signal Processing"
+Steven Leeb,"Emanuel E. Landsman (1958) Professor, [EE and CS]",sbleeb@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Energy"
+Charles Leiserson,Edwin Sibley Webster Professor; [CS],cel@mit.edu,"Computer Architecture
+Systems and Networking
+Theory of Computation"
+Laura Lewis,"Athinoula A. Martinos Associate Professor, [EE]",ldlewis@mit.edu,"AI for Healthcare and Life Sciences
+Biological and Medical Devices and Systems
+Signal Processing"
+Paul Liang,"Assistant Professor [AI], shared appointment with Media Arts and Sciences (MAS) and EECS",ppliang@mit.edu,"Artificial Intelligence + Machine Learning
+Human-Computer Interaction
+Natural Language and Speech Processing"
+Jae Lim,"Professor of EE (Post-Tenure), [EE and AI+D]",jslim@mit.edu,"Graphics and Vision
+Natural Language and Speech Processing
+Signal Processing"
+Barbara Liskov,Institute Professor (post tenure),liskov@csail.mit.edu,"Programming Languages and Software Engineering
+Systems and Networking"
+Kuikui Liu,"Elting Morison Career Development Professor, Assistant professor, [CS]",liukui@mit.edu,Theory of Computation
+Luqiao Liu,"Associate Professor of EECS, [EE]",luqiao@mit.edu,"617-253-0019
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Nanoscale Materials, Devices, and Systems"
+Tomás Lozano-Pérez,"School of Engineering Professor of Teaching Excellence, [AI+D]",tlp@mit.edu,"Artificial Intelligence + Machine Learning
+Robotics"
+Nancy Lynch,"NEC Professor of Software Science and Engineering (Post-Tenure), [CS]",lynch@csail.mit.edu,"Communications Systems
+Systems and Networking
+Theory of Computation"
+Samuel Madden,"Faculty Head, CS (effective Aug 1); Distinguished College of Computing Professor, [CS and AI+D]",madden@csail.mit.edu,"Artificial Intelligence + Machine Learning
+Systems and Networking"
+Aleksander Mądry,"Cadence Design Systems Professor, [AI+D and CS]",madry@mit.edu,"AI and Society
+Artificial Intelligence + Machine Learning
+Theory of Computation"
+Thomas Magnanti,"Institute Professor, [AI&D]",magnanti@mit.edu,"Optimization and Game Theory
+Systems Theory, Control, and Autonomy"
+Wojciech Matusik,"Joan and Irwin M. (1957) Jacobs Professor, [CS and AI+D]",wojciech@csail.mit.edu,"Artificial Intelligence + Machine Learning
+Computational Fabrication and Manufacturing
+Graphics and Vision"
+Muriel Médard,"NEC Professor of Software Science and Engineering, [EE and CS, AI + D]",medard@mit.edu,"Communications Systems
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Information Science and Systems"
+Alexandre Megretski,"Professor of EE, [EE and AI+D]",ameg@mit.edu,"Information Science and Systems
+Systems Theory, Control, and Autonomy
+Theory of Computation"
+Silvio Micali,Ford Foundation Professor of Engineering,silvio@csail.mit.edu,"(Post-Tenure)
+, [CS]
+Security and Cryptography
+Theory of Computation"
+Robert Miller,"Education Officer for Computer Science, Distinguished Professor in EECS, [CS]",rcm@mit.edu,"Human-Computer Interaction
+Programming Languages and Software Engineering"
+Robert Morris,"Professor of CS and Engineering, [CS]",rtm@csail.mit.edu,Systems and Networking
+Stefanie Mueller,TIBCO Founders Professor; Associate Professor [CS and EE],stefanie.mueller@mit.edu,"Computational Fabrication and Manufacturing
+Human-Computer Interaction
+Robotics"
+Sendhil Mullainathan,"Peter de Florez Professor, Professor of EECS; Professor of Economics, Dual Appointment [AI+D]",sendhil@mit.edu,
+Anand V Natarajan,"ITT Career Development Professor in Computer Technology; Assistant Professor, [CS]",anandn@mit.edu,"408-910-4116
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Theory of Computation"
+Farnaz Niroui,"Associate Professor, [EE]",fniroui@mit.edu,"617-253-4600
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Energy
+Nanoscale Materials, Devices, and Systems"
+Jelena Notaros,"Robert J. Shillman (1974) Career Development Professor in Electrical Engineering and Computer Science; Assistant Professor, [EE]",notaros@mit.edu,"617-253-3073
+Biological and Medical Devices and Systems
+Communications Systems
+Electronic, Magnetic, Optical and Quantum Materials and Devices"
+Kevin P. O’Brien,"Associate Professor, [EE]",kpobrien@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Nanoscale Materials, Devices, and Systems
+Quantum Computing, Communication, and Sensing"
+William D. Oliver,"Associate Director, RLE;  Henry Ellis Warren (1894) Professor, [EE and AI+D]",william.oliver@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Nanoscale Materials, Devices, and Systems
+Optics + Photonics"
+Alan Oppenheim,"Ford Professor of Engineering (Post-Tenure), [EE and CS, AI+D]",avo@mit.edu,"Quantum Computing, Communication, and Sensing
+Signal Processing
+Systems Theory, Control, and Autonomy"
+Terry Orlando,"Professor of EE (Post-Tenure), [EE]",orlando@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Nanoscale Materials, Devices, and Systems"
+Asu Ozdaglar,"EECS Department Head; MIT Schwarzman College of Computing Deputy Dean of Academics; MathWorks Professor, [AI+D and EE, CS]",asuman@mit.edu,"AI and Society
+Artificial Intelligence + Machine Learning
+Optimization and Game Theory"
+Tomás Palacios,"Director, Microsystems Technology Laboratories (MTL); Clarence J. Lebel Professor in Electrical Engineering, [EE]",tpalacios@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Energy
+Nanoscale Materials, Devices, and Systems"
+Pablo Parrilo,"Joseph F. and Nancy P. Keithley Professor in Electrical Engineering, [AI+D]",parrilo@mit.edu,"Artificial Intelligence + Machine Learning
+Information Science and Systems
+Optimization and Game Theory"
+David Perreault,"Ford Foundation Professor of Engineering, [EE]",djperrea@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Energy
+Integrated Circuits and Systems"
+Yury Polyanskiy,"Education Officer for AI+D; Leverett Howell Cutten ’07 And William King Cutten ’39 Professor, [AI+D and EE]",yp@mit.edu,"Artificial Intelligence + Machine Learning
+Communications Systems
+Information Science and Systems"
+Jonathan Ragan-Kelley,"Associate Professor, [CS and AI+D]",jrk@mit.edu,"801-913-0101
+Graphics and Vision
+Programming Languages and Software Engineering"
+Manish Raghavan,"Drew Houston (2005) Professorship; Assistant Professor / Shared Appointment in Sloan School of Management, [CS]",mragh@mit.edu,"AI and Society
+Artificial Intelligence + Machine Learning
+Optimization and Game Theory"
+Rajeev Ram,"Clarence J. LeBel Professor in Electrical Engineering and Computer Science, [EE and AI+D]",rajeev@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Energy
+Nanoscale Materials, Devices, and Systems"
+L. Rafael Reif,"MIT President Emeritus; Ray and Maria Stata Professor of Electrical Engineering and Computer Science, [EE]",reif@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Integrated Circuits and Systems"
+Negar Reiskarimian,"Assistant Professor, [EE]",negarr@mit.edu,"617-253-0726
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Integrated Circuits and Systems"
+Martin Rinard,"Professor of CS and Engineering, [CS and AI+D]",rinard@csail.mit.edu,Programming Languages and Software Engineering
+Ronald Rivest,"Institute Professor (Post-Tenure); Professor Post-Tenure of Computer Science and Engineering, [CS]",rivest@mit.edu,"Security and Cryptography
+Theory of Computation"
+Ronitt Rubinfeld,"Edwin Sibley Webster Professor, [CS and AI+D]",ronitt@csail.mit.edu,Theory of Computation
+Daniela Rus,"Director, CSAIL; MIT Schwarzman College of Computing Deputy Dean of Research; Andrew (1956) and Erna Viterbi Professor, [AI+D and CS]",rus@csail.mit.edu,"Artificial Intelligence + Machine Learning
+Robotics"
+Daniel Sanchez,"Professor of EECS, [CS and EE]",sanchez@csail.mit.edu,"Computer Architecture
+Integrated Circuits and Systems
+Systems and Networking"
+Arvind Satyanarayan,"Associate Professor, [CS]",arvindsatya@mit.edu,"Artificial Intelligence + Machine Learning
+Human-Computer Interaction"
+Nidhi Seethapathi,"Frederick A. (1971) and Carole J. Middleton Career Development Professor of Neuroscience; Assistant Professor / Shared Appointment in BCS, [AI + D]",nidhise@mit.edu,"AI for Healthcare and Life Sciences
+Biological and Medical Devices and Systems"
+Devavrat Shah,"Andrew (1956) and Erna Viterbi Professor, [AI+D]",devavrat@mit.edu,"AI and Society
+Artificial Intelligence + Machine Learning
+Information Science and Systems"
+Jeffrey Shapiro,"Julius A. Stratton Professor in EE (Post-Tenure), [EE and AI+D]",jhs@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices
+Nanoscale Materials, Devices, and Systems
+Quantum Computing, Communication, and Sensing"
+Nir Shavit,"Professor of EECS, [CS]",shanir@csail.mit.edu,Theory of Computation
+Julian Shun,"Associate Professor, [CS]",jshun@mit.edu,"Computer Architecture
+Programming Languages and Software Engineering
+Theory of Computation"
+Vincent Sitzmann,"Jamieson Career Development Professor in Electrical Engineering and Computer Science; Assistant Professor, [AI+D]",sitzmann@mit.edu,"Artificial Intelligence + Machine Learning
+Graphics and Vision
+Robotics"
+Tess Smidt,X-Window Consortium Professor; Assistant Professor [EE],tsmidt@mit.edu,"Artificial Intelligence + Machine Learning
+Electronic, Magnetic, Optical and Quantum Materials and Devices"
+Charles Sodini,"Founder & Co-Director, Medical Electronic Device Realization Center (MEDRC); Clarence J. LeBel Professor of Electrical Engineering (Post-Tenure), [EE]",sodini@mit.edu,"Biological and Medical Devices and Systems
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Integrated Circuits and Systems"
+Armando Solar-Lezama,"Distinguished Professor of Computing, MIT Schwarzman College of Computing; Professor of EECS, [CS and AI+D]",asolar@csail.mit.edu,"Programming Languages and Software Engineering
+Systems and Networking"
+Justin Solomon,"Associate Professor of EECS, [AI+D and CS]",jsolomon@mit.edu,"Artificial Intelligence + Machine Learning
+Graphics and Vision
+Robotics"
+David Sontag,"Professor in EECS and in IMES, [AI+D]",dsontag@mit.edu,"AI for Healthcare and Life Sciences
+Artificial Intelligence + Machine Learning
+Natural Language and Speech Processing"
+Suvrit Sra,"Associate Professor of EECS and in IDSS, [AI+D]",suvrit@mit.edu,"Artificial Intelligence + Machine Learning
+Optimization and Game Theory
+Theory of Computation"
+Michael Stonebraker,"Adjunct Professor of CS and Engineering, [CS]",stonebraker@csail.mit.edu,Systems and Networking
+Collin Stultz,"Nina T. and Robert H. Rubin Professor in Medical Engineering and Science; Co-Director, Harvard-MIT Program in Health Sciences and Technology (HST); Associate Director, Institute for Medical Engineering and Science (IMES), [AI+D and EE]",cmstultz@mit.edu,"AI for Healthcare and Life Sciences
+Biological and Medical Devices and Systems"
+Gerald Sussman,"Panasonic Professor, [CS and EE, AI+D]",gjs@mit.edu,Artificial Intelligence + Machine Learning
+Vivienne Sze,"Professor, [EE and CS, AI+D]",sze@mit.edu,"617.324.7352
+Artificial Intelligence + Machine Learning
+Computer Architecture
+Energy"
+Peter Szolovits,Professor of Computer Science and Engineering; [AI+D and CS],psz@mit.edu,"AI for Healthcare and Life Sciences
+Artificial Intelligence + Machine Learning
+Biological and Medical Devices and Systems"
+Russell Tedrake,"Toyota Professor, Electrical Engineering and Computer Science, Mechanical Engineering, and Aeronautics and Astronautics, [AI+D]",russt@csail.mit.edu,"Artificial Intelligence + Machine Learning
+Robotics"
+Bruce Tidor,"Professor of EECS; Professor of Biological Engineering, Dual Appointment [AI+D]",tidor@mit.edu,"AI for Healthcare and Life Sciences
+Biological and Medical Devices and Systems"
+Antonio Torralba,"Faculty Head, AI+D; Delta Electronics Professor, [AI+D]",torralba@csail.mit.edu,"Artificial Intelligence + Machine Learning
+Graphics and Vision"
+John Tsitsiklis,"Clarence J. LeBel Professor in Electrical Engineering and Computer Science (post-tenure), [AI+D]",jnt@mit.edu,"Optimization and Game Theory
+Systems Theory, Control, and Autonomy"
+Caroline Uhler,"Andrew (1956) and Erna Viterbi Professor of Engineering; Professor of EECS and in IDSS, [AI+D]",cuhler@mit.edu,"AI for Healthcare and Life Sciences
+Artificial Intelligence + Machine Learning"
+Vinod Vaikuntanathan,"Ford Foundation Professor of Engineering, [CS and AI+D]",vinodv@csail.mit.edu,"Artificial Intelligence + Machine Learning
+Security and Cryptography
+Theory of Computation"
+George Verghese,"Henry Ellis Warren (1894) Professor of Electrical and Biomedical Engineering (Post-Tenure), [EE and AI+D]",verghese@mit.edu,"Biological and Medical Devices and Systems
+Signal Processing
+Systems Theory, Control, and Autonomy"
+Joel Voldman,"Faculty Head, EE; William R. Brody (1965) Professor, [EE]",voldman@mit.edu,"Biological and Medical Devices and Systems
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Information Science and Systems"
+Martin Wainwright,Cecil H. Green Professor; Professor of Mathematics,mjwain@mit.edu,"Artificial Intelligence + Machine Learning
+Information Science and Systems
+Optimization and Game Theory"
+Cardinal Warde,"Professor of EE, [EE]",warde@mit.edu,"Electronic, Magnetic, Optical and Quantum Materials and Devices"
+Jacob White,"Cecil H. Green Professor in Electrical Engineering, [EE and AI+D]",white@mit.edu,"Nanoscale Materials, Devices, and Systems
+Systems Theory, Control, and Autonomy
+Theory of Computation"
+Ryan Williams,"Professor of EECS, [CS and AI+D]",rrw@mit.edu,"617-253-5851
+Theory of Computation"
+Virginia Vassilevska Williams,"Professor, [CS and AI+D]",virgi@mit.edu,"617-253-5851
+Theory of Computation"
+Alan Willsky,"Edwin Sibley Webster Professor of EECS (Professor Emeritus ), [AI+D]",willsky@mit.edu,"Artificial Intelligence + Machine Learning
+Graphics and Vision
+Systems Theory, Control, and Autonomy"
+Ashia Wilson,"Lister Brothers (Gordon K. ’30 and Donald K. ’34) Career Development Professor; Assistant Professor, [AI+D]",ashia07@mit.edu,"AI and Society
+Artificial Intelligence + Machine Learning
+Theory of Computation"
+Gregory Wornell,"Sumitomo Electric Industries Professor in Engineering, [AI+D]",gww@mit.edu,"Artificial Intelligence + Machine Learning
+Communications Systems
+Graphics and Vision"
+Mengjia Yan,"Associate Professor, [CS]",mengjiay@mit.edu,"617-258-0719
+Computer Architecture
+Security and Cryptography"
+Sixian You,"Alfred Henry (1929) and Jean Morrison Hayes Career Development Professor; Assistant Professor, [EE]",sixian@mit.edu,"Biological and Medical Devices and Systems
+Electronic, Magnetic, Optical and Quantum Materials and Devices
+Optics + Photonics"
+Nickolai Zeldovich,"Joan and Irwin M. (1957) Jacobs Professor, [CS]",nickolai@csail.mit.edu,"Programming Languages and Software Engineering
+Security and Cryptography
+Systems and Networking"
+Lizhong Zheng,"Professor of EE, [EE and AI+D]",lizhong@mit.edu,"Communications Systems
+Information Science and Systems
+Systems Theory, Control, and Autonomy"
+Victor Zue,"Delta Electronics Professor of EECS (Post-Tenure), [AI+D and CS]",zue@csail.mit.edu,"Educational Technology
+Human-Computer Interaction
+Natural Language and Speech Processing"
