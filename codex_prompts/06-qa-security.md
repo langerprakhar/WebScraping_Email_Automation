@@ -1,4 +1,7 @@
 # CODEX SESSION 06 — ADVERSARIAL ACCEPTANCE TESTS + RED TEAM
+
+CUSTOM SUBAGENT PROFILES: Explicitly request security_qa_auditor and outlook_com_auditor (project-local .codex/agents/*.toml) for bounded read-only audits. Wait for their results. If named spawning is unsupported in the installed client, use normal explorer subagents; do not claim they ran when they did not. Parallel write access remains restricted to this session's owning agent.
+
 Requires Session 00 foundation. Worktree branch codex/qa-security. Read full V2 contract and API. This branch adds TESTS only; no production modifications or fake green tests.
 
 Delegate two read-only subagents:
