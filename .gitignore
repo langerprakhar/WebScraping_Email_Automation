@@ -34,3 +34,7 @@ venv/
 .DS_Store
 # Do not check in a resume, personal contact list, scraped email list, or live campaign export.
 # Note: .gitignore does not untrack data previously committed into repository history.
+
+# Codex automated worktree session logs
+.codex_runs/
+.codex_worktrees/
