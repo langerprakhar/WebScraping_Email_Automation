@@ -1,4 +1,7 @@
 # CODEX SESSION 05 — CLASSIC OUTLOOK COM DRAFTS + LOCAL EML FALLBACK
+
+CUSTOM SUBAGENT PROFILES: Explicitly request outlook_com_auditor and security_qa_auditor (project-local .codex/agents/*.toml) for bounded read-only audits. Wait for their results. If named spawning is unsupported in the installed client, use normal explorer subagents; do not claim they ran when they did not. Parallel write access remains restricted to this session's owning agent.
+
 Requires committed Session 00 foundation. Worktree branch codex/outlook-local.
 Read AGENTS.md, docs/MASTER_V2_LOCAL_OUTLOOK.md, docs/API_CONTRACT_V2.md, docs/OUTLOOK_SETUP.md. COM ONLY; ALL Graph/MSAL/OAuth/SMTP references in previous V1 documents are obsolete and MUST NOT be implemented. Do not modify shared core or sibling modules.
 
