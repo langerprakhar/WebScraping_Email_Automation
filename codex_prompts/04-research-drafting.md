@@ -1,4 +1,7 @@
 # CODEX SESSION 04 — RESEARCH METADATA + LLM EVIDENCE MATCHER + EMAIL COMPILER
+
+CUSTOM SUBAGENT PROFILES: Explicitly request publication_identity_auditor and security_qa_auditor (project-local .codex/agents/*.toml) for bounded read-only audits. Wait for their results. If named spawning is unsupported in the installed client, use normal explorer subagents; do not claim they ran when they did not. Parallel write access remains restricted to this session's owning agent.
+
 Requires committed Session 00 foundation. Worktree branch codex/research-drafting.
 Read AGENTS.md, docs/MASTER_V2_LOCAL_OUTLOOK.md, docs/API_CONTRACT_V2.md, docs/RESEARCH_SOURCES_AND_TEMPLATES.md and original resume truth bank. No modification of shared core, GRA/GTA/industry or Outlook modules.
 
