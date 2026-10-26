@@ -85,7 +85,21 @@ for ($i = 0; $i -lt $specs.Count; $i += $MaxParallel) {
         throw ("One or more child sessions failed: " + ($failures -join ', ') + '. See each child worktree .codex_runs/session-XX.log. No merge attempted.')
     }
 }
-Write-Host '[7/7] Integrating completed branches in original feature worktree...'
+# Git metadata is not reliably writable inside the Codex workspace-write sandbox.
+# Merge each completed child branch here, in the trusted host PowerShell process.
+# Distinct session ownership makes these merges normally conflict-free. If a
+# conflict occurs, fail safely for explicit resolution; never reset/force.
+Write-Host '[7/7] Merging completed child branches in the host process...'
+foreach ($spec in $specs) {
+    $current = @(& git -C $root status --porcelain --untracked-files=all)
+    if ($current.Count -gt 0) { throw 'Integration tree has uncommitted changes. Resolve before merging.' }
+    Write-Host "Merging $($spec.Branch)"
+    & git -C $root merge --no-ff --no-edit $spec.Branch
+    if ($LASTEXITCODE -ne 0) {
+        throw "Merge conflict/error for $($spec.Branch). Review git status in $root; no force/reset performed. Do not rerun launcher until resolved."
+    }
+}
+Write-Host '[7/7] All six branches merged; Codex integration and full test repair next...'
 & $runner -Session '07' -Workspace $root
 if ($LASTEXITCODE -and $LASTEXITCODE -ne 0) { throw 'Integration failed; inspect session-07.log.' }
 Write-Host 'Build orchestration completed. Review docs/RESULTS.md and the draft PR. No emails were sent.'
