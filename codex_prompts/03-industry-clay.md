@@ -1,4 +1,7 @@
 # CODEX SESSION 03 — INDUSTRY RESEARCH JOBS, RESEARCHER DISCOVERY AND CLAY
+
+CUSTOM SUBAGENT PROFILES: Explicitly request industry_jobs_auditor and publication_identity_auditor (project-local .codex/agents/*.toml) for bounded read-only audits. Wait for their results. If named spawning is unsupported in the installed client, use normal explorer subagents; do not claim they ran when they did not. Parallel write access remains restricted to this session's owning agent.
+
 Requires Session 00 foundation. Worktree branch codex/industry-clay. No shared-core modifications.
 Read AGENTS.md, docs/MASTER_V2_LOCAL_OUTLOOK.md, docs/API_CONTRACT_V2.md, docs/CLAY_PLAYBOOK.md.
 
