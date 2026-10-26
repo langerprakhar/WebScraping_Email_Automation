@@ -8,9 +8,9 @@ import os
 import google.generativeai as genai
 
 # Load sensitive credentials from environment variables
-GEMINI_API_KEY = "AIzaSyDU8K93Pnzr5et7JKHV_Xg1_cOw1XE1vsI"  # Replace with your Gemini API key
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")  # previously hardcoded; rotate exposed credential
 SMTP_EMAIL = 'prakhar.langer@gmail.com'  # Your email
-SMTP_PASSWORD = 'onpfevtjqcqyntti'  # Your app password
+SMTP_PASSWORD = os.environ.get("OUTREACH_LEGACY_SMTP_PASSWORD")  # previously hardcoded; rotate exposed credential
 
 # Configure Google Generative AI
 genai.configure(api_key=GEMINI_API_KEY)
@@ -27,6 +27,7 @@ def generate_elaboration_gemini(title):
 
 # Email sending function
 def send_emails_from_csv(csv_file, publications_file, sender_email, sender_password, subject, body_template, resume_path):
+    raise RuntimeError("Legacy SMTP send path disabled; use reviewed Outlook Drafts workflow instead.")
     try:
         # Load email addresses and names from the CSV file
         df = pd.read_csv(csv_file)
