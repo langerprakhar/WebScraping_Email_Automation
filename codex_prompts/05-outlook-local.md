@@ -1,0 +1,22 @@
+# CODEX SESSION 05 — CLASSIC OUTLOOK COM DRAFTS + LOCAL EML FALLBACK
+
+CUSTOM SUBAGENT PROFILES: Explicitly request outlook_com_auditor and security_qa_auditor (project-local .codex/agents/*.toml) for bounded read-only audits. Wait for their results. If named spawning is unsupported in the installed client, use normal explorer subagents; do not claim they ran when they did not. Parallel write access remains restricted to this session's owning agent.
+
+Requires committed Session 00 foundation. Worktree branch codex/outlook-local.
+Read AGENTS.md, docs/MASTER_V2_LOCAL_OUTLOOK.md, docs/API_CONTRACT_V2.md, docs/OUTLOOK_SETUP.md. COM ONLY; ALL Graph/MSAL/OAuth/SMTP references in previous V1 documents are obsolete and MUST NOT be implemented. Do not modify shared core or sibling modules.
+
+Delegate two read-only subagents:
+- Outlook integration researcher: inspect installed Classic Outlook/profiles only if on actual Windows desktop; check documented COM MailItem.Save and account store behavior, STA threads, namespaces, folders, attachment checks, and whether New Outlook is present. Do not create drafts during reconnaissance.
+- Safe-drafts red-teamer: design mocked COM failures/multi-account wrong store/phantom draft, lost attachment, duplicate run, active COM hangs, Outlook not installed, new Outlook only, reply misclassification, opt-outs and accidental .Send() paths. Return tests and static guard.
+
+Own src/outreach_engine/outlook_local/**, tests/outlook_local/**, docs/RESULTS_OUTLOOK.md only. Implement:
+1. Windows Classic Outlook detection and COM initialization on interactive main STA thread using optional pywin32. Refuse unsupported platform/new Outlook-only. Safe import on Linux CI and WSL: import must NOT trigger COM.
+2. Diagnose available named stores/mail accounts, Match selected account with SMTP/email and store IDs; default to fail if ambiguous. No auto-switch to another account. Verify that account's Drafts default folder, not just global default (e.g. GetDefaultFolder vs per-store GetDefaultFolder). Account selection must be explicit and current Outlook profile logged, with no secrets.
+3. Given explicit human-approved draft hash and recipient+attachment SHA256, create MailItem, set To/Subject/Body/attachment, Save(), move into intended account/store's Drafts folder if necessary, confirm actual location and subsequent read-back of recipient/subject/body/attachment metadata. Store EntryID+StoreID atomically. Use stable application custom UserProperty/marker if viable. Prevent duplicates after timeout/retry by searching marker in target store. Never call .Send(). Do not expose any method named send; block suspicious fields that could schedule/send.
+4. Local fallback using Python email.message.EmailMessage and .eml files in data/drafts under ignored tree; one file per stable draft version and idempotency marker, safe file permissions, UTF-8 headers/MIME attachment and source/audit manifest. Status MUST be EML_ONLY_EXPORTED and NOT OUTLOOK_DRAFT_SAVED. No OST/PST manipulation, no assertion that writing AppData folders syncs to Exchange.
+5. Folder creation only under selected account Inbox if explicitly allowed: GT Assistantship Replies and Industry Research Replies; idempotent, don't create duplicates. Organize by source/identifier and opt-in move, otherwise inspect/read-only. GRA/GTA tags in DB/local categories where supported.
+6. Read-only reply scan by ConversationID/internet headers or exact sent-from history; ambiguous -> NEEDS_REVIEW. Bounces/auto-replies/declines separated. Never delete or move messages by default. Manual sent evidence required, not inferred by draft existence.
+7. Safe diagnostics/CLI integration adapter in OWN module, not edited core CLI; integration session wires commands.
+8. Mocked COM fixture tests (no real mailbox mutations) for all operations, including negative assertion that no Send() occurs. Record all measured behavior honestly. If real Classic Outlook local profile is available, perform only READ-ONLY diagnose until user approves a SINGLE harmless self-addressed draft. Do not create anything live unapproved.
+
+Exit: run mocked tests and static send grep, commit owned files 'feat(outreach): implement local Classic Outlook drafts and EML fallback'. Document genuine Outlook version/profile prerequisites without asking for Graph auth.

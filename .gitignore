@@ -1,0 +1,40 @@
+# Research Outreach Engine: credentials, messages, resume, and personal research data
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+*.pst
+*.ost
+*.eml
+*.msg
+*.pem
+*.pfx
+*.p12
+*.token
+*.secret
+*.key
+data/private/
+data/exports/
+data/cache/
+data/drafts/
+data/reports/
+logs/
+out/
+tokens/
+.cache/
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+*.py[cod]
+.DS_Store
+# Do not check in a resume, personal contact list, scraped email list, or live campaign export.
+# Note: .gitignore does not untrack data previously committed into repository history.
+
+# Codex automated worktree session logs
+.codex_runs/
+.codex_worktrees/
