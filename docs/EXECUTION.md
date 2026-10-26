@@ -21,9 +21,9 @@ Run the .ps1 file in a PowerShell session that permits local script execution. I
 ## How the orchestrator works
 1. Session 00 runs directly in feature branch and MUST produce a real typed core package, CI tests, stable API, CLI, and git commit.
 2. It then creates sibling local worktrees in ../Outreach-V2-Worktrees, based on the SAME foundation commit.
-3. Runs separate processes for 01-GRA, 02-GTA, 03-Industry (wave 1), 04-Research+Drafting, 05-Outlook COM, 06-QA (wave 2); switch -MaxParallel 6 if capacity allows, but 3 is safer for quotas.
+3. Runs separate processes for 01-GRA, 02-GTA, 03-Industry (wave 1), 04-Research+Drafting, 05-Outlook COM, 06-QA (wave 2); switch -MaxParallel 6 only if capacity allows; 3 is safer. Windows PowerShell 5.1 native stderr is handled without treating Codex startup messages as fatal errors.
 4. Each runs a specialized prompt via: Get-Content -Raw -Encoding UTF8 codex_prompts/NN-file.md | codex exec --sandbox workspace-write -
-5. Verifies each process exit code, branch cleanliness, then Session 07 merges all six branches into feature branch, repairs integration, runs offline tests, and reports honest status. It does NOT push/merge PR #1 to main, create live Outlook drafts, or send anyone mail.
+5. Verifies each process exit code; if Codex's sandbox cannot write .git, host PowerShell stages ONLY session-owned files after path/secret checks and commits them. The HOST launcher then merges the six completed branches into feature branch in a deterministic order, without force/reset, BEFORE starting Session 07. Session 07 verifies merges, repairs integration, runs offline tests, and reports actual status. It does NOT push/merge PR #1 to main, create live Outlook drafts, or send anyone mail.
 6. Logs reside under ignored .codex_runs/session-XX.log within each worktree; complete user-action and test reports in docs/RESULTS.md and docs/RESULTS_*.md.
 
 ## To run each Codex session manually (if automatic orchestrator is blocked)
