@@ -1,106 +1,15 @@
-# CODEX MASTER EXECUTION PROMPT — GT GRA / GTA + INDUSTRY AI RESEARCH OUTREACH
-Date: October 26, 2026. Owner: Georgia Tech M.S. CS student, AI specialization. Existing repository: `langerprakhar/WebScraping_Email_Automation`.
+# NOTICE — Superseded by V2
 
-## Mission: implement, test, and operate a single production-quality outreach research system
+The original October 26 V1 master document has been superseded by the owner's explicit LOCAL-OUTLOOK-ONLY decision.
 
-You (Codex CLI, running on the owner's Windows machine) own the complete refactor of this old repo into `outreach_engine`. No superficial scraping-only changes. No immediate bulk sending. Implement discovery, evidence gathering, entity resolution, high-precision ranking, personalized drafting, Outlook Drafts persistence, two Outlook inbox folders, and response tracking. The owner's success metric is QUALIFIED REPLIES and actual GRA/GTA/research interviews, not scraped address count.
+Read and follow these newer authoritative files instead:
+1. docs/MASTER_V2_LOCAL_OUTLOOK.md
+2. docs/API_CONTRACT_V2.md
+3. codex_prompts/00-foundation.md through codex_prompts/07-integration.md
+4. docs/OUTLOOK_SETUP.md and docs/EXECUTION.md
 
-The owner strongly prefers ONE end-to-end autonomous engineering pass, not an interactive sequence of tiny decisions. First inspect everything, choose safe defaults, implement, test and repair. External sign-ins, granting Microsoft tenant consent, revoking exposed keys, or a password rotation require owner action: group them into a concise single `USER_ACTIONS.md` instead of asking repeated questions. The task MUST remain safe and useful in offline/dry-run mode when external auth is unavailable.
+Do not build Microsoft Graph, MSAL, Azure app registration, delegated permissions, SMTP, automatic sender or a workflow that claims writing local .eml files into AppData automatically creates Outlook Drafts.
 
-## Explicit non-negotiables
+The existing historical repository may contain compromised credentials; rotate/revoke them and avoid exposing values in output. The new feature branch's legacy SMTP entry points must stay fail-closed.
 
-1. **Never auto-send an email**. Build no send feature and request no Mail.Send permission. Save drafts only after explicit review approval of the batch; default `--dry-run`.
-2. The historical public repo contains hardcoded SMTP and Gemini credential-like literals. Do NOT execute the old scripts; scan and replace any exposed secrets; instruct owner to revoke/rotate all exposed values. `.gitignore` does not erase Git history. Never log literal secrets or commit contact data/resume.
-3. No fabricated publication titles, citations, research findings, lab affiliation, courses, grades, authorship, job availability or email addresses. Uncertain records are quarantine-only.
-4. No site scraping against robots.txt, access restrictions, CAPTCHAs, blocks or Terms. Rate limits and Retry-After are binding. Do not synthesize emails from names or common patterns.
-5. Always use professional/public emails clearly associated with research outreach, respect no-contact instructions, opt-outs, spam controls, suppression lists and institution policies. One recipient per message.
-6. Authorship and ACTIVE affiliation need independent evidence where available. Cite exact source URLs and crawl timestamps.
-7. User's uploaded research resume is authoritative for EXPERIENCE, but don't put the PDF into the public repo. External Windows resume path:
-   `C:\Users\Prakhar\Music\Company-Wise-Resumes\PrakharLanger_research.pdf`
-8. Target campaigns: `GT_GRA_SPRING_2027`, `GT_GTA_SPRING_2027`, `INDUSTRY_AI_RESEARCH_SUMMER_2027`.
-9. Never count a draft as a sent email, or a saved Outlook item as a received reply. No fake success metrics.
-
-## Baseline inspection & remediation (P0)
-- Inventory all root and nested scripts and CSV columns; identify reusable parsers and shortcomings. Preserve legacy code initially, but ensure the new CLI never imports or invokes legacy mail scripts.
-- Replace/remove credential literals from tracked current files via minimal secure changes on a separate branch. Provide a secure credential-rotation and Git-history remediation guide. Because the repo is public, never output the old secrets. Audit for other keys.
-- Make a clean Python 3.11+ typed package with pyproject.toml, ruff, mypy (sane strictness), pytest, requests/httpx, bs4/lxml, pydantic, rapidfuzz, msal, optional pywin32 on Windows, optional LLM providers. Use optional dependency groups for scraping, outreach, graph.
-- `outreach_engine` CLI with commands `doctor`, `discover-gt`, `discover-gt-jobs`, `import-gta-courses`, `discover-industry-jobs`, `import-clay`, `enrich-papers`, `rank`, `compose`, `review-export`, `outlook-drafts`, `outlook-folders`, `sync-replies`, `report`, `export-csv`. Help flags and Windows/PowerShell commands must work.
-- SQLite WAL transactional persistence, migrations, persistent retry/outbox queue, append-only audit events, deterministic IDs and one row per contact-person/company/campaign. Schema: persons, affiliations, contacts, source_urls, publications, jobs, course_sections, lead_links, evidence, score_factors, drafts, messages, response_events, suppressions, runs. All entities timestamped.
-- Ensure CSV export/import supports RFC 4180 quoting, UTF-8 BOM handling, nonASCII people names, formula-injection defenses for spreadsheet export. Store provenance and evidence confidence for each extracted field.
-- DB transitions: DISCOVERED -> VERIFIED -> ENRICHED -> REVIEW_READY -> APPROVED -> DRAFT_SAVED -> SENT_OBSERVED -> REPLIED/BOUNCED/DECLINED; also NEEDS_REVIEW and SUPPRESSED. Transitions are idempotent, append-only audit, crash-resumable, never skip required gates.
-- Never overwrite reviewed text silently; preserve versions and hashes. Store SHA256 of resume, rendered body and attachment and Outlook immutable ID if available.
-- Retry network errors with exponential backoff+full jitter, provider-specific quotas, circuit breaker, checkpoint, dry-run, telemetry. Pause on 401/403/auth/robots blocks; no bypass.
-
-## Pipeline A — Georgia Tech GRA Spring 2027 (P1)
-Purpose: discover funding-relevant Georgia Tech faculty/PIs, labs, and research openings across ALL colleges and interdisciplinary institutes, not just College of Computing.
-Discovery must begin with verified authoritative GT seeds including:
-`https://ml.gatech.edu/people`, `https://ml.gatech.edu/people/faculty`, CoC schools of Computer Science, Interactive Computing, Computational Science & Engineering, ECE, BME, ISyE, Math, Biology, ChBE, ME, biomedical/health informatics, Scheller, Public Policy, relevant colleges and GT research institutes, and the GTRI jobs portal `https://careers.gtri.gatech.edu/jobs/search`.
-Discover faculty directories, faculty profile pages, named research groups, PI contact pages, current funding/hiring pages and official job postings. Follow site-approved sitemaps and links with depth and domain caps; allow `*.gatech.edu`, plus explicitly reviewed GT-related domains only. Build separate site adapters and generic structured-data extractor. Extract public professional emails only, using mailto/structured and visible text; record the exact origin URL and verified display name. No guessed email pattern. Disable harvesting from unrelated pages.
-Add cross-site deduplication, Unicode name normalization, current appointment evidence, emeritus/non-hiring/academic affiliate flags. Prefer faculty with current research budgets or open advertisements rather than generic institute leadership.
-Retrieve verified papers from OpenAlex by author ORCID/OpenAlex ID and independent profile matching; Semantic Scholar as fallback; Crossref for DOI, DBLP, arXiv, Europe PMC/PubMed for subject area. Separate most-cited papers from latest 2-3-year papers, apply topic fit, and require source/abstract support for any paper-specific sentence. Avoid querying Google Scholar with aggressive scraping; if legally accessible only via approved data provider, treat it as secondary, not primary.
-Rank by: methodological + topic fit to the owner's verified experience, active lab projects, evidence of funding/hiring, contact verifiability, responsiveness/relevance, with a clear breakdown. Suggested categories: long-running agents/evaluation and memory; ML systems/serving; RAG/data systems; clinical prediction/health AI; NLP and AI safety.
-GTRI: find live GRA postings and VALIDATE U.S. citizenship/security clearance constraints before recommending. Many postings can be inaccessible to this international student; flag as INELIGIBLE if confirmed. GA != GRA; Georgia Tech policy says GA generally lacks the GRA/GTA tuition waiver. Do not confuse 25% GA with 33-50% GRA/GTA. Eligibility unknown -> REVIEW_REQUIRED.
-GRA emails should ask specifically about funded GRA availability for Spring 2027 and offer a brief meeting, with one cited recent or classic paper and one concrete contribution bridge. Resume attached as PDF once.
-
-## Pipeline B — Georgia Tech GTA Spring 2027 (P2)
-Authoritative application provided by user:
-`https://gatech.co1.qualtrics.com/jfe/form/SV_8ofvtf1XAwJnkMu`.
-The form may not be readable publicly; do not scrape through protections, guess its course list, or claim it was submitted. Provide a Playwright manual-interactive import that opens the form for the user without submitting and extracts visible course labels once the user has authorized access, OR an import command for a saved CSV/screenshot transcribed by the owner. Also allow import of existing `GT_Spring_2027_TA_Contacts.csv` / `Spring2027_TA_Contacts.csv` if files are provided. Never treat unverified course option text as fact.
-Use the form as source of truth for eligible GTA course shortlist and official GT OSCAR course sections to verify instructor for Spring 2027. Course->instructor joins by course, CRN, section, campus, and term, not solely course code. Email only instructors/course leadership who can speak to TA needs; apply through the official survey first. Do not mass-message 20 people for one course.
-Distinct GTA rank features: student background in that subject, projects, grades (if verified), class familiarity, grading/office-hours/recitation ability, course size or need, verified professor/course assignment. No fake teaching history or final grades. Prior user-declared undergrad grades: Intro to AI A+, Deep Learning A+ (unverified transcript, require explicit claims configuration); GT ML is in progress and MUST NOT be described as a final A. GRA paper personalization is generally irrelevant to GTA and must not be forced.
-GTA email: mention exact course, GTA for Spring 2027, why qualified, whether submitted the official application ONLY if actually recorded, clear 10-15-minute chat/consideration request, attached research resume if appropriate.
-
-## Pipeline C — Industry AI Research Internships Summer 2027 (P3)
-Start with current OFFICIAL career postings, not an arbitrary prestige list. Build configurable target registry for Google DeepMind/Google Research, Microsoft Research, Meta FAIR, Amazon/AWS AGI, Apple ML Research, NVIDIA Research, Adobe Research, IBM Research, Salesforce AI Research, Databricks, Snowflake, Netflix, Uber AI, LinkedIn AI, ByteDance/TikTok, Anthropic, OpenAI, and other research-active employers, but DO NOT assert they currently have open internship roles without verified listings. Use specific title aliases: Student Researcher, Research Intern, Applied Scientist Intern, Research Engineer Intern, ML Research Intern, Applied AI/ML SWE Intern, Applied Scientist, and role-specific ML systems/agents/evals.
-Require an official active job URL, title, job ID, location, season, on-site/remote, posted and checked timestamps, deadline, student eligibility, authorization/citizenship, and team if exposed. For 'open now', recheck official listing within 48 hours before draft approval. Closed/unverified/ambiguous posting = do not claim current opening.
-From qualifying jobs identify current team leads/hiring managers/research scientists via official research blogs/team pages, publications (NeurIPS, ICML, ICLR, ACL, EMNLP, CVPR, KDD, systems conferences), OpenReview, proceedings, Semantic Scholar, OpenAlex, DBLP, arXiv, Crossref. Do NOT assume a paper's listed affiliation and email are still current; confirm via 2025-2026 official profile or similar strong public professional evidence. Paper email can be a clue; current professional email MUST be verified.
-Target up to 20 RESEARCH CANDIDATES per company for ranking, NOT 20 unsolicited messages to the same company. Prefer a few well-aligned people with real work overlap and helpful referrals; honor cap e.g. maximum 2 initial drafts per company in 7 days without separate human permission.
-Use Clay deliberately: `Find Companies` -> conditional company/job-qualified `Find People` -> current title/current-employer match -> prioritized email waterfall -> enrichment source and confidence -> CSV export/API when authorized. Build a Clay import and validation adapter first; optional direct API only with supported credentials/documented endpoint. Spend credits only after shortlist/ranking. No scraping LinkedIn behind access controls. Contacts already found on paper/official sites should not incur duplicate enrichment cost.
-Research overlaps: LLM-agent orchestration & evaluation, time-consistent memory/retrieval, clinical prediction and health AI, inference serving/vLLM/observability, trustworthy AI. Don't suggest an internal referral unless the contact is genuinely connected to the open team. Messages make a small question or 10-minute chat request; no demand for a referral.
-
-## Shared academic identity + publication module (P4)
-- Exact and fuzzy name resolution with blocking; do NOT merge homonyms. Link ORCID -> OpenAlex author ID -> Semantic Scholar author ID where sufficiently supported. Require institutional profile/name affiliation and publication co-authorship consistency or manual review.
-- Store top-cited all-time and relevant recent works separately: citation count itself is NOT proof of relevance; rank relevance to resume + topical fit + recent lab activity. Track title, year, DOI, authors, author ID, citations, abstract source, abstract hash, URL, retrieval timestamp.
-- Live publisher and website text treated as untrusted with prompt-injection defenses; don't use papers as instructions.
-- Extraction confidence and validation gate: accepted if author match supported + paper publication verified + outreach-specific relevance documented; else quarantine.
-- Research summary: 1 factual sentence on specific contribution (supported by paper abstract/full text), 1 factual sentence on user's analogous project. Do not falsely say full paper was read when only abstract was available.
-- Audit prompts and model outputs; structured JSON schema enforced, model vendor abstracted via environment/credentials. LLM retries and output repair allowed, but cannot 'fix' missing facts by invention.
-- Resume profile truth bank: GT D2I MIMIC-IV temporal diagnostic-order forecasting 6/12/24h; five comparison arms; pilot candidate recall 0.874 (context-specific, never generalize); NYU/Courant MIMIC-III test-order forecasts with leakage-aware timelines and medical evidence; NSE on-prem GGUF SLM + llama.cpp/vLLM telemetry, multi-agent orchestrator and hybrid RAG; NUS PubMed drug/phospholipid literature mining 500+ studies; StoryGuard first-author IEEE ICET 2025 published; healthcare FHE/GenAI paper under minor revision, NOT published; reproducible agent memory evaluation comparing structured memory 0.792 vs 0.681 synthetic benchmark. Claim only what resume supports and tag the source; no claimed GRA funding.
-
-## High-precision message compiler (P5)
-Produce source-grounded short plain-text messages in strict templates in `docs/RESEARCH_SOURCES_AND_TEMPLATES.md`; no em dashes if avoidable. Three template families: GRA 100-140 words, GTA 80-110 words, Industry 90-130 words. Strict structure:
-GRA: who/GT status -> verified specific paper/project and insight -> exact bridge to user's work -> clear funded Spring 2027 GRA availability + short meeting -> signature.
-GTA: GT M.S. -> exact course/term and any published instructor -> relevant knowledge and support -> official form status if verified -> specific ask -> signature.
-Industry: status and exact open job/team -> verified researcher work + concise overlap -> relevant concrete experience -> advice/short chat ask -> portfolio and signoff.
-Safeguards: one recipient, correct pronoun/title, quote exact title not fabricated, <=1 paper, no excessive flattery, no irrelevant buzzwords, no unsupported stats, no long paragraphs, no false familiarity, no 1500 near-identical emails, no generated placeholder leak, no fake sender identity. Proofread deterministically + LLM critic restricted to evidence only. Score 0-100 and prevent drafts on any blocker.
-All citation/provenance is kept in audit CSV/DB; do not clutter email with formal citations except when naturally mentioning the linked paper.
-
-## Outlook draft and reply system (P6)
-Graph first: delegated OAuth/MSAL login, requested permissions `User.Read` and `Mail.ReadWrite` ONLY, no Mail.Send. Use `POST /me/messages` for Drafts, attachments via Graph fileAttachment where allowed; verify account ID and returned draft ID; read back recipient/subject/body/attachment metadata before marking DRAFT_SAVED. Prefer immutable IDs where supported, secure MSAL token cache, no tokens in .env/files committed.
-When Graph tenant permissions unavailable, Classic Outlook on Windows may use `win32com.client.Dispatch("Outlook.Application")`, `CreateItem(0)`, attach resume, `Save()`, confirm new item in the active profile Drafts. Detect account ambiguity and require selected-account confirmation. New Outlook COM is NOT supported. Do not edit or inject Outlook .ost/.pst files. `.eml` export is for MANUAL REVIEW only, never claimed synchronized Drafts.
-Create exactly two inbox subfolders: `GT Assistantship Replies`, `Industry Research Replies` (detect existing, don't duplicate). Use categories/DB `GRA` and `GTA` to distinguish academic subtypes. Conservatively associate replies by thread+recipient mapping, with dedup and manual review for ambiguous addresses; mark replies vs out-of-office/bounces vs declines. No silent deletion, no unauthorized forwarding. Observe Sent Items only to mark SENT_OBSERVED if user has manually sent. Campaign opt-out suppresses all future contact to that person.
-Human gate: CLI `review-export` creates reviewable CSV + HTML/Markdown, and a separate `approve` marks explicit IDs approved. `outlook-drafts --approved-only --limit N` creates mailbox drafts after auth. NO method sends or schedules sends. An operational run may process large research batches, but start with 3 known-good test drafts then 10 real drafts and inspect.
-
-## Rate limits, scope and quality gates (P7)
-- Max 2 initial contacts per company per 7-day interval by default; 1 per recipient across all campaigns; no mass BCC; no automated follow-up delivery; create follow-up drafts only after user decides.
-- Respect faculty/lab no-contact policies and prior sent history. Suggested 7-business-day follow-up window; don't retry a person who declined or opted out.
-- Every schema/adapter has fixtures for real-ish HTML, redirects, timeouts, robots rejection, 429/Retry-After, empty pages, typos, duplicate identities, ambiguous authors, paper missing DOI, graduate student mistaken as PI, outdated affiliations, empty course list, no open position, misleading paper email, rejected mailbox auth, attachment mismatch, and cursor pagination.
-- Negative security tests: malicious page text trying to instruct LLM to send messages or leak resume; public GitHub secret scanning; CSV injection; duplicate campaign retries; wrong email-person pair; ghost Outlook draft; stale job.
-- 100% of external-contact drafts must pass deterministic blocking checks, attach correct SHA256-matched resume, contain correct position/semester, exact recipient address and verifiable paper/project. No silent fallbacks and no hallucinated names; blocked rows visible in report.
-- Offline CI runs static typing/lint/test suite; integration tests mock Graph, OpenAlex and site APIs. Live pilot must report actual retrievals and actual verified mailbox drafts separately, NEVER imply real sends.
-- Metrics: discovered -> verified -> eligible -> evidence-complete -> human-approved -> draft saved -> manually sent observed -> delivered if known -> replied -> meetings -> assistantship/offer. Count sources per school/company and false-positive rate; top blockers and confidence calibrations. Optimize qualified reply rate, not draft count.
-
-## Required documentation and final reporting
-Output clean root `README.md` with one-shot PowerShell install/doctor/dry-run preview and explicit account setup; `docs/USER_ACTIONS.md` for all action dependencies; `docs/RESEARCH_SOURCES_AND_TEMPLATES.md`; `docs/OUTLOOK_SETUP.md`; `docs/CLAY_PLAYBOOK.md`; `docs/RESULTS.md` recording tests actually run, retrieved counts, verified counts, blocked counts, and known constraints. All reproducible by the owner.
-Owner should be able to run three independent CLI commands after setup:
-`outreach run --campaign gt-gra --semester 2027-spring --dry-run`,
-`outreach run --campaign gt-gta --semester 2027-spring --dry-run`,
-`outreach run --campaign industry --season 2027-summer --dry-run`.
-Then review and explicitly approve a shortlist and persist drafts via `outreach outlook-drafts --approved-only` with no sending capability. If a live site blocks automated access, use documented authorized input fallback rather than claiming success.
-
-## Handoff: what to do NOW
-1. Inspect repo and summarize current reusable modules and serious security risks, with no secret literals.
-2. Implement P0 through P7, end-to-end; ship maintainable code and tests, not just a design document.
-3. Run all offline tests, fix failures, run a real respectful sample of Georgia Tech profile retrieval and a small industry-publication sample, WITHOUT sending or creating live drafts by default.
-4. Publish a factual results report; identify only tasks requiring owner sign-in/credentials/form export in one concise checklist.
-5. Do not stop after writing scaffolding or fake the live integrations. Prefer fully working smaller vertical slices with honest blockers over an enormous unverified rewrite.
+Use documented current Codex CLI syntax, not removed --full-auto. Owner's default email dispatch mode remains DRY_RUN and explicitly human-approved local COM draft-save only.
