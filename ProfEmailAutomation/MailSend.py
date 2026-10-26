@@ -7,6 +7,7 @@ from email import encoders
 import os
 
 def send_emails_from_csv(csv_file, sender_email, sender_password, subject, body_template, resume_path):
+    raise RuntimeError("Legacy SMTP send path disabled; use reviewed Outlook Drafts workflow instead.")
     """
     Reads email addresses and names from a CSV file and sends a personalized email with an attachment.
 
@@ -70,7 +71,7 @@ def send_emails_from_csv(csv_file, sender_email, sender_password, subject, body_
 # Example usage
 csv_file_path = 'matchedProfs.csv'  # The file containing the email addresses and names
 sender_email = 'prakhar.langer@gmail.com'  # Replace with your Gmail address
-sender_password = 'onpf evtj qcqy ntti'  # Replace with your Gmail app password
+sender_password = os.environ.get("OUTREACH_LEGACY_SMTP_PASSWORD")  # previously hardcoded; rotate exposed credential
 email_subject = "Request for Research Internship Opportunity"  # Email subject
 email_body_template = """
 Dear Professor {LastName},
