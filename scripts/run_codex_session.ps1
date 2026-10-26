@@ -102,7 +102,7 @@ try {
             }
             $p = $p.Replace('\', '/')
             if (-not (Test-OwnedPath $p)) {
-                throw "Out-of-scope file changed by Session $Session: $p. No files staged or committed."
+                throw "Out-of-scope file changed by Session ${Session}: $p. No files staged or committed."
             }
             if ($p -match '(^|/)(data|secrets|tokens|\.codex_runs)/' -or
                 $p -match '(?i)\.(pdf|ost|pst|pfx|pem|key|eml|msg)$') {
