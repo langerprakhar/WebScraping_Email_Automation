@@ -1,30 +1,12 @@
-# Owner actions needed for live operation (grouped, not a repetitive Q&A)
+# One short owner-action checklist for production use (Local Outlook V2)
 
-This repo branch provides technical instructions only; Codex must implement and validate them before live use.
+Codex must implement and test the offline engine WITHOUT asking for a sequence of small permissions. These few dependencies cannot be bypassed by automation:
 
-## Immediate security (do now)
-- Rotate/revoke any Gmail app passwords / passwords, Gemini keys and other tokens historically hardcoded in this PUBLIC GitHub repo. Treat them as compromised even if later deleted from current files.
-- Review exposed history and agree on a separate coordinated history-cleanup plan before any force-push. Do NOT force-rewrite history without explicit owner approval, because it can break clones/forks. Removing credentials from working tree is NOT sufficient.
-- Do not run legacy SMTP scripts. No need to post literal secrets or private resume to GitHub.
+1. SECURITY NOW: revoke/rotate any previously hardcoded public-repo Gmail app password, Gemini API key and other exposed secrets; original Git history/default main retains disclosure even after feature branch cleanup. Do not paste live secrets into ChatGPT/GitHub. Separate owner-approved history cleanup is optional later, not a substitute for revocation.
+2. Resume: local file should exist at C:\Users\Prakhar\Music\Company-Wise-Resumes\PrakharLanger_research.pdf (or set OUTREACH_RESUME_PATH). Do not copy this PDF into public git. Use runtime only.
+3. GTA: copy earlier GT_Spring_2027_TA_Contacts.csv into ignored local data/private/; verify current authorized options in https://gatech.co1.qualtrics.com/jfe/form/SV_8ofvtf1XAwJnkMu and whether official GTA form is SUBMITTED. Do not claim submission otherwise.
+4. Outlook: choose selected account/profile in CLASSIC Outlook on Windows. No Graph/OAuth/Azure app consent required. If ONLY New Outlook exists, the system uses .eml export with manual import/open/save. If Classic Outlook is policy-blocked for COM, obey restriction.
+5. Human review: review first test email, approve exact IDs before any COM draft persistence. The engine does not auto-send. Create the two separate reply folders only after you approve that local mailbox operation.
+6. Clay: optionally provide documented workspace/API access or privately export company/people CSV. Enrich only qualified companies with current verified relevant jobs. No need to connect Clay for GT GRA/GTA.
 
-## One-time local inputs
-- On the owner's Windows machine, check `C:\Users\Prakhar\Music\Company-Wise-Resumes\PrakharLanger_research.pdf` exists. The repo must take it from a local path or `OUTREACH_RESUME_PATH`; never commit it.
-- Put previously generated `GT_Spring_2027_TA_Contacts.csv` in `data/private` and import; it needs OSCAR and application-list revalidation. This earlier file is in user's ChatGPT file library, not the GitHub repo.
-- Owner accesses the official GTA Qualtrics form and supplies an authorized export of course options or permits a local interactive read-only browser-assisted import. This tool cannot assume access to the form or claim submission.
-- Provide/confirm whether College of Computing Spring 2027 GTA application has been SUBMITTED; else outbound copy must not say it was.
-
-## Outlook
-- Select intended Outlook account/profile. If Georgia Tech account: Microsoft Graph app registration/delegated Mail.ReadWrite may require admin consent; do not bypass. Login via explicit approved Microsoft OAuth UI. Never supply mail password to Codex.
-- If admin consent is denied, check Classic Outlook is installed/configured and whether COM can create a verified test draft. New Outlook COM won't work.
-- Approve first 1 self-addressed test draft; inspect actual Drafts and attachment. Only then approve real drafts in review CSV/UI; the engine will never auto-send.
-
-## Clay
-- Open owner's Clay workspace; run a small validated company/jobs-first table; only enrich qualified candidate rows and export to private CSV.
-- If an API key is needed and allowed, enter via local secure OS credential store/.env not tracked by Git.
-
-## Human review
-- Read sampled individualized emails, proof paper references and course/role accuracy, and explicitly select approved lead IDs. Actual sending remains manual in Outlook.
-- Avoid spamming professors already contacted, especially current/previous advisors; register those existing relationships and prior replies in local suppression/contact-history input.
-
-## What is NOT required from owner
-- Re-answer routine architecture prompts, manually paste the same resume bio for every lead, guess addresses, upload secrets to ChatGPT/GitHub, send 1500 near-identical emails, or manually create every draft in Outlook.
+User should NOT have to re-enter resume information per recipient, manually look up each publication, manually hand-create hundreds of emails or answer architecture questions. Output exact blockers once in a single report.
