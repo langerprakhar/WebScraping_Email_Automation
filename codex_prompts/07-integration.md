@@ -1,4 +1,7 @@
 # CODEX SESSION 07 — CTO INTEGRATION / COMPLETE WORKING PRODUCT
+
+CUSTOM SUBAGENT PROFILES: Explicitly request security_qa_auditor and publication_identity_auditor (project-local .codex/agents/*.toml) for bounded read-only audits. Wait for their results. If named spawning is unsupported in the installed client, use normal explorer subagents; do not claim they ran when they did not. Parallel write access remains restricted to this session's owning agent.
+
 Runs LAST in original feature branch feat/research-outreach-engine-2026-10-26 after Sessions 01-06 finish and commit. THIS SESSION MUST ACTUALLY MERGE BRANCHES, TEST, REPAIR, DOCUMENT. It must not stop after creating a plan.
 Read AGENTS.md, docs/MASTER_V2_LOCAL_OUTLOOK.md, docs/API_CONTRACT_V2.md, all codex_prompts, and results docs.
 
