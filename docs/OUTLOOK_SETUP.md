@@ -1,21 +1,28 @@
-# Outlook Drafts and reply management — implementation contract
+# LOCAL Outlook Drafts V2: no Graph, no OAuth, no SMTP
 
-## Microsoft Graph preferred (new or classic Outlook)
-Docs: https://learn.microsoft.com/en-us/graph/api/user-post-messages ; https://learn.microsoft.com/en-us/graph/api/user-post-mailfolders ; https://learn.microsoft.com/en-us/graph/outlook-organize-messages .
-Graph delegated OAuth scopes: User.Read and Mail.ReadWrite, never Mail.Send. MSAL interactive/device-code login; may require Georgia Tech Microsoft Entra admin approval for an application. Never attempt to bypass disabled tenant consent; stop with accurate status and provide Classic Outlook fallback if available.
-Discover and confirm the account mailbox UPN/address. `POST /me/messages` creates a draft by default. Include resume as Graph fileAttachment with correct MIME content type and base64 content for supported small files, or create then attach separately; verify by GET. Store immutable draft ID or provider ID, stable idempotency key (campaign/person/job-or-course/draft version). On timeout query/search existing draft first, NEVER blindly duplicate. Use delta pagination where supported for response sync and revalidate actual mailbox.
-Folders: create two inbox children only if absent, exactly `GT Assistantship Replies` and `Industry Research Replies`. Split the first with GRA/GTA categories, not unnecessary extra folders. Move INCOMING verified replies conservatively using prior thread ID/sender evidence; ambiguous = review queue, no destructive mailbox action. Do not move unrelated messages. Sent status only by confirmed Sent Items or explicit owner record.
-Read-only dry-run must work without any account connection. In a real pilot, create 1 synthetic/self-addressed draft, read it back, verify attachment, subject, recipient, then inspect manually before batching.
+Reference docs:
+Microsoft: https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/one-outlook (New Outlook does not support COM/VSTO)
+Microsoft: https://learn.microsoft.com/en-us/office/vba/api/outlook.mailitem.save (MailItem.Save)
+Microsoft: https://learn.microsoft.com/en-us/office/vba/api/outlook.application.createitem (classic MailItem)
+Microsoft: https://learn.microsoft.com/en-us/office/vba/api/outlook.mailitem.sendusingaccount (account selection)
+Microsoft: https://learn.microsoft.com/en-us/office/client-developer/outlook/selecting-an-api-or-technology-for-developing-solutions-for-outlook (STA / local machine).
 
-## Classic Outlook COM conditional fallback
-Microsoft says new Outlook for Windows does not support COM/VSTO:
-https://learn.microsoft.com/en-us/office/dev/add-ins/outlook/one-outlook
-Classic Outlook supports CreateItem(olMailItem) and MailItem.Save:
-https://learn.microsoft.com/en-us/office/vba/api/outlook.application.createitem
-https://learn.microsoft.com/en-us/office/vba/api/outlook.mailitem.save
-On Windows with Classic Outlook active and explicitly selected owner account, using `win32com.client.Dispatch("Outlook.Application")`, `CreateItem(0)`, `To`, `Subject`, `Body`, `Attachments.Add`, `Save` creates a draft. Confirm account and folder through namespace before attempting 1 single draft. Never call .Send() or fill a BCC list. COM save may use default account; validate actual store; don't assume the sender.
-Do not write to or attempt to mutate Outlook OST/PST/local cache. Files do not become synchronized drafts by appearing in AppData. `.eml` generation is a separate portable archival/review output, not the Outlook inbox.
-Provide clear `doctor outlook` probes to identify (1) account, (2) Outlook flavor, (3) Graph permission available, (4) COM installed, (5) whether default drafts store is appropriate, without creating real data.
+## Must-have runtime
+- Windows on the user's interactive logged-in desktop.
+- Classic Outlook desktop, already installed and signed in to the intended mail account. Outlook policy can restrict automation and those restrictions must be respected.
+- Python 3.11+ and pywin32 optional Windows dependency. No need to expose/send Outlook password to the application or Codex.
+- Test platform capabilities via outreach outlook diagnose, which MUST NOT create mail or folders.
+- A mailbox may have multiple accounts/stores. Require explicit intended account; verify its SMTP address, stable StoreID, and actual Drafts folder; do not assume the first default account.
+- MailItem.Save() saves a new MailItem to the default item-type folder; if the account's folder needs another location, explicitly Move() to correct Drafts store and verify. Outlook COM operates on STA; do not call from a background worker thread/service/WSL. Never call MailItem.Send().
 
-## Explicit operational guard
-`outreach outlook-drafts --approved-only --limit 3` is the ONLY action allowed to create mailbox drafts, after approvals. It still may not send. If an external action is unavailable, report BLOCKED with what owner action is needed, do not falsely mark delivered.
+## Approved draft flow
+1. Confirm verified contact email, recipient person/current employer, campaign, cited verified paper/course/job, reviewed exact message SHA, resume exists and compute local SHA256.
+2. User explicitly approves named draft IDs. Before any real run, request owner approval for ONE self-addressed test draft. No authorization, no mailbox writes.
+3. Create Classic Outlook COM MailItem: subject, To, body, attachment. Save() and ensure actual item belongs to selected account Drafts folder. Read back item EntryID+StoreID, recipient/subject/body, attachment filename and metadata; if mismatch, keep NEEDS_REVIEW and report failure, not success. Detect preexisting IDempotency marker after timeout before retry.
+4. Exactly two optional Inbox subfolders: GT Assistantship Replies and Industry Research Replies; create only on explicit owner command, existing folder reuse, never duplicate.
+5. Conservative read-only scan Sent Items and Inbox to identify actual sent/replied status; do not infer sending from Draft. Ambiguous messages human review. Moving incoming replies between folders is opt-in only.
+6. All live mail operations remain local/interactive; no Graph/MSAL/SMTP/sending.
+
+## If only New Outlook is installed, or COM blocked
+Export RFC-compliant .eml files under data/drafts/[campaign], one per APPROVED recipient. Include To, Subject, text/plain, attached PDF (application/pdf) and audit manifest. Mark EML_ONLY_EXPORTED, not OUTLOOK_DRAFT_SAVED. Inform owner that .eml files require manual opening/import and explicit saving/sending. The application may offer a review link to .eml but may not claim they are synced to mailbox.
+NEVER write .ost/.pst or Outlook cache directory; there is no supported file drop that causes an .eml to become a synchronized Draft automatically.
